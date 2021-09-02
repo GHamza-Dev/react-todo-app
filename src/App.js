@@ -3,7 +3,7 @@ import './App.css';
 import Layout from './components/Layout/Layout';
 import Header from './components/Layout/Header/Header';
 import Body from './components/Layout/Body/Body';
-import Wrapper from './components/Layout/Wrapper/Wrapper';
+import Wrapper from './components/Layout/Header/Wrapper/Wrapper';
 import Logo from './components/Logo/Logo';
 class App extends Component{
 
