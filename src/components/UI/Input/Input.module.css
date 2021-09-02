@@ -1,0 +1,38 @@
+.input_group{
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: hsl(235, 24%, 19%);
+    padding: 0 17px;
+    margin-top: 30px;
+    border-radius: 5px;
+    box-shadow: 0 1px 10px #3c4058;
+}
+
+.input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    margin-left: 15px;
+    background-color: inherit;
+    color: #d2d3db;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    padding-top: 3px;
+}
+
+.input:hover,
+.input:active{
+    outline: none;
+}
+
+.circle{
+    width: 22px;
+    height: 20px;
+    border-radius: 50%;
+    border: solid 1px #9394a5;
+    opacity: .4;
+}
