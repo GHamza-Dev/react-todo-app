@@ -1,9 +1,10 @@
 import React from 'react';
 import classes from './TodoItem.module.css';
+import Checkbox from '../UI/CheckBox/CheckBox';
 
 const TodoItem = (props) => (
     <li className={classes.todo_item}>
-        <h4>X</h4>
+        <Checkbox />
         <p className={classes.todo_text}>Complet Todo App on Frontend Mentor</p>
     </li>
 );
