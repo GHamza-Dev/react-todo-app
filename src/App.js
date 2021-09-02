@@ -6,6 +6,7 @@ import Body from './components/Layout/Body/Body';
 import Wrapper from './components/Layout/Header/Wrapper/Wrapper';
 import HeaderTop from './components/HeaderTop/HeaderTop';
 import Input from './components/UI/Input/Input';
+import TodoList from './components/TodoList/TodoList';
 class App extends Component{
 
 
@@ -19,7 +20,7 @@ class App extends Component{
           </Wrapper>
         </Header>
         <Body>
-          
+          <TodoList />
         </Body>
       </Layout>
     );

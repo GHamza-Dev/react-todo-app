@@ -1,12 +1,12 @@
 .input_group{
-    height: 55px;
+    height: 51px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: hsl(235, 24%, 19%);
     padding: 0 17px;
     margin-top: 30px;
-    border-radius: 5px;
+    border-radius: 4px;
     box-shadow: 0 1px 10px #3c4058;
 }
 
@@ -33,6 +33,5 @@
     width: 22px;
     height: 20px;
     border-radius: 50%;
-    border: solid 1px #9394a5;
-    opacity: .4;
+    border: solid 1px #393a4c;
 }

@@ -1,0 +1,14 @@
+.todo_item{
+    width: 100%;
+    height: 51px;
+    display: flex;
+    align-items: center;
+    padding: 0 17px;
+    border-bottom: 1px solid #393a4c;
+}
+
+.todo_text{
+    margin-left: 15px;
+    font-size: .9rem;
+    color: #9394a5;
+}
