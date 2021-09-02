@@ -1,0 +1,5 @@
+.body{
+    background-color: #161722;
+    height: calc(100vh - 35vh);
+    width: 100%;
+}

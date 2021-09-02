@@ -1,0 +1,11 @@
+.checkbox{
+    appearance: none;
+    border: 1px solid blue;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.checkbox:checked{
+    background-color: blue;
+}
