@@ -7,19 +7,21 @@ import Wrapper from './components/Layout/Header/Wrapper/Wrapper';
 import HeaderTop from './components/HeaderTop/HeaderTop';
 import Input from './components/UI/Input/Input';
 import TodoList from './components/TodoList/TodoList';
+import LocalStorage from './helpers/LocalStorage';
 class App extends Component{
 
-  state = {
-    todos:[
-      {id:11,text:'Complete online JavaScript course',done:true},
-      {id:12,text:'Jog around the park 3x',done:false},
-      {id:13,text:'10 minutes meditation',done:false},
-      {id:14,text:'Read for 1 hour',done:false},
-      {id:15,text:'Pick up groceries',done:false},
-      {id:16,text:'Complete online JavaScript course',done:false}
-    ],
-    input:'',
-    filterBy:'all'
+  constructor(){
+    super();
+    
+    this.storage = new LocalStorage(
+      'todo-app-challenge-xx12354'
+    );
+
+    this.state = {
+      todos: this.storage.getData(),
+      input:'',
+      filterBy:'all'
+    }
   }
 
   toggleCompletedHandler = (id) => {
@@ -30,9 +32,9 @@ class App extends Component{
       return todo;
     });
 
-    this.setState({
-      todos:todoList
-    })
+    this.storage.setData(todoList);
+
+    this.setState({todos:todoList});
   }
 
   createTodoHandler = (e) => {
@@ -43,13 +45,14 @@ class App extends Component{
       return;
     }
     const todoList = [...this.state.todos];
-    const id = this.state.todos[this.state.todos.length-1]['id']+1;
+    const id = `${Math.random()*10}sdf1`;
     todoList.push({id:id,text:inputValue,done:false});
     
+    this.storage.setData(todoList);
+
     this.setState({todos:todoList});
 
-    // reset input
-    this.setState({input:''});
+    this.setState({input:''});    
   }
 
   updateInputStateHandler = (e) => {
