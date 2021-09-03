@@ -18,7 +18,8 @@ class App extends Component{
       {id:15,text:'Pick up groceries',done:false},
       {id:16,text:'Complete online JavaScript course',done:false}
     ],
-    input:''
+    input:'',
+    filterBy:'all'
   }
 
   toggleCompletedHandler = (id) => {
@@ -54,6 +55,11 @@ class App extends Component{
     })
   }
 
+  changeFilterOption = (e) =>{
+    const filterOption = e.target.textContent.toLowerCase().trim();
+    this.setState({filterBy:filterOption});
+  }
+
   render(){
     return (
       <Layout>
@@ -67,7 +73,9 @@ class App extends Component{
         </Header>
         <Body>
           <TodoList todos={this.state.todos} 
-          onCheck={this.toggleCompletedHandler} />
+          onCheck={this.toggleCompletedHandler} 
+          onChangeFilter={this.changeFilterOption}
+          filterBy={this.state.filterBy}/>
         </Body>
       </Layout>
     );

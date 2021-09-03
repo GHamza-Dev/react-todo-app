@@ -5,9 +5,9 @@ const navigationBar = (props) => (
     <nav className={classes.navigation_bar}>
         <p>5 items left</p>
         <ul>
-            <li className={classes.active} >All</li>
-            <li>Active</li>
-            <li>Completed</li>
+            <li onClick={props.onChangeFilter} className={classes.active} >All</li>
+            <li onClick={props.onChangeFilter}>Active</li>
+            <li onClick={props.onChangeFilter}>Completed</li>
         </ul>
         <p>Clear Completed</p>
     </nav>
