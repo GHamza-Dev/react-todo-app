@@ -1,0 +1,26 @@
+.navigation_bar{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 17px;
+    font-size: .86rem;
+    color: #4d5066;
+}
+
+.navigation_bar ul{
+    display: flex;
+    justify-content: space-between;
+    width: 40% !important;
+}
+
+.navigation_bar p:hover,
+.navigation_bar li:hover{
+    color: #cacde8;
+    cursor: pointer;
+}
+
+.navigation_bar .active{
+    color:#3a7bfd;
+}

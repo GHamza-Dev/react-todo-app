@@ -1,6 +1,8 @@
 import React from 'react';
 import classes from './TodoList.module.css';
 import TodoItem from '../TodoItem/TodoItem';
+import NavigationBar from '../NavigationBar/NavigationBar';
+
 const TodoList = (props) => {
     let todoList = props.todos.map(todo => (
         <TodoItem id={todo.id}
@@ -9,9 +11,12 @@ const TodoList = (props) => {
     ));
 
     return(
-        <ul className={classes.todo_list}>
-            {todoList}
-        </ul>
+        <div className={classes.todo_list}>
+            <ul>
+                {todoList}
+            </ul>
+            <NavigationBar />
+        </div>
     );  
 };
 
