@@ -11,4 +11,33 @@
     margin-left: 15px;
     font-size: .9rem;
     color: #cacde8;
+    display: inline;
+    position: relative;
+}
+
+.todo_text.completed{
+    color: #4d5066;
+}
+
+.todo_text.completed::after{
+    content: ' ';
+    height: 1px;
+    width: 0;
+    background-color: #4d5066;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    animation: lineThrough .5s ease-out forwards;
+}
+
+@keyframes lineThrough {
+    from{
+        width: 0;
+        background-color: #ffffff;
+    }
+
+    to{
+        width: 100%;
+        background-color: #4d5066;
+    }
 }
