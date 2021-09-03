@@ -39,7 +39,8 @@ const TodoList = (props) => {
             <ul>
                 {todoList}
             </ul>
-            <NavigationBar onChangeFilter={props.onChangeFilter} />
+            <NavigationBar itemsLeft={props.itemsLeft} 
+            onChangeFilter={props.onChangeFilter} />
         </div>
     );  
 };

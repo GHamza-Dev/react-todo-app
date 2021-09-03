@@ -3,7 +3,9 @@ import classes from './NavigationBar.module.css';
 
 const navigationBar = (props) => (
     <nav className={classes.navigation_bar}>
-        <p>5 items left</p>
+        <p>
+            {props.itemsLeft === 1 ? `One item left` : `${props.itemsLeft} Items left`} 
+        </p> 
         <ul>
             <li onClick={props.onChangeFilter} className={classes.active} >All</li>
             <li onClick={props.onChangeFilter}>Active</li>

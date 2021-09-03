@@ -63,6 +63,15 @@ class App extends Component{
     this.setState({filterBy:filterOption});
   }
 
+  getLeftItems = () =>{
+    let itemsLeft = 0;
+    this.state.todos.forEach(todo => {
+      if(!todo['done']) itemsLeft++;
+    });
+
+    return itemsLeft;
+  }
+
   render(){
     return (
       <Layout>
@@ -79,7 +88,8 @@ class App extends Component{
           <TodoList todos={this.state.todos} 
           onCheck={this.toggleCompletedHandler} 
           onChangeFilter={this.changeFilterOption}
-          filterBy={this.state.filterBy}/>
+          filterBy={this.state.filterBy}
+          itemsLeft={this.getLeftItems()} />
         </Body>
       </Layout>
     );
