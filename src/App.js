@@ -47,6 +47,9 @@ class App extends Component{
     todoList.push({id:id,text:inputValue,done:false});
     
     this.setState({todos:todoList});
+
+    // reset input
+    this.setState({input:''});
   }
 
   updateInputStateHandler = (e) => {
@@ -67,7 +70,8 @@ class App extends Component{
           <Wrapper>
             <HeaderTop />
             <form onSubmit={this.createTodoHandler}>
-              <Input onType={this.updateInputStateHandler} />
+              <Input onType={this.updateInputStateHandler} 
+              inputValue={this.state.input}/>
             </form>
           </Wrapper>
         </Header>

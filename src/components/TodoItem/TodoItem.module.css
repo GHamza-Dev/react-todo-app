@@ -7,6 +7,24 @@
     border-bottom: 1px solid #393a4c;
 }
 
+.todo_item:nth-child(odd){
+    animation: animateOddItems .5s ease-out forwards;
+}
+
+@keyframes animateOddItems {
+    from{opacity: 0;transform: translateX(-500px);}
+    to{opacity: 1;transform: translate(0);}
+}
+
+.todo_item:nth-child(even){
+    animation: animateEvenItems .5s ease-out forwards;
+}
+
+@keyframes animateEvenItems {
+    from{opacity: 0;transform: translateX(500px);}
+    to{opacity: 1;transform: translate(0);}
+}
+
 .todo_text{
     margin-left: 15px;
     font-size: .9rem;

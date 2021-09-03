@@ -6,7 +6,8 @@ const Input = (props) => (
         <div className={classes.circle}></div>
         <input onChange={props.onType}
         className={classes.input} type="text" 
-        placeholder="What are you planing for today?" />
+        placeholder="What are you planing for today?" 
+        value={props.inputValue}/>
     </div>
 );
 
