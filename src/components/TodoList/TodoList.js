@@ -5,6 +5,7 @@ import NavigationBar from '../NavigationBar/NavigationBar';
 
 const TodoList = (props) => {
     let todoList = null;
+    let alertMsg = 'Note that this is a static todo, it means that you can nor mark it as completed nither delete it.\nPlease type and hit enter to create a new todo ;)';
     
     switch (props.filterBy) {
         case 'completed':
@@ -12,7 +13,7 @@ const TodoList = (props) => {
                 .map(todo => (
                 <TodoItem id={todo.id}
                 key={todo.id} text={todo.text} completed={todo.done} 
-                onCheck={props.onCheck} />
+                onCheck={props.onCheck} onRemove={props.onRemove} />
             ));
             break;
 
@@ -21,15 +22,15 @@ const TodoList = (props) => {
                 .map(todo => (
                 <TodoItem id={todo.id}
                 key={todo.id} text={todo.text} completed={todo.done} 
-                onCheck={props.onCheck} />
+                onCheck={props.onCheck} onRemove={props.onRemove} />
             ));
             break;
     
         default:
-            todoList = props.todos.map(todo => (
+            todoList = [...props.todos].map(todo => (
                 <TodoItem id={todo.id}
                 key={todo.id} text={todo.text} completed={todo.done} 
-                onCheck={props.onCheck} />
+                onCheck={props.onCheck} onRemove={props.onRemove} />
             ));
             break;
     }
@@ -37,7 +38,12 @@ const TodoList = (props) => {
     return(
         <div className={classes.todo_list}>
             <ul>
-                {todoList}
+                {todoList.length > 0 ? todoList : (
+                    <TodoItem id={1}
+                    key={1} text='Type and hit enter to create a new todo.' completed={false} 
+                    onCheck={()=>alert(alertMsg)} onRemove={()=>alert(alertMsg)} />
+                    )
+                }
             </ul>
             <NavigationBar itemsLeft={props.itemsLeft} 
             onChangeFilter={props.onChangeFilter} />

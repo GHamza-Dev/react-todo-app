@@ -11,7 +11,7 @@ const navigationBar = (props) => (
             <li onClick={props.onChangeFilter}>Active</li>
             <li onClick={props.onChangeFilter}>Completed</li>
         </ul>
-        <p>Clear Completed</p>
+        <p className={classes.clear}>Clear Completed</p>
     </nav>
 );
 

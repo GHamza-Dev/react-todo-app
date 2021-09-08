@@ -59,3 +59,21 @@
         background-color: #4d5066;
     }
 }
+
+.delete{
+    position: absolute;
+    right: 17px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    display: none;
+}
+
+.todo_item:hover .delete{
+    display: block;
+}
+
+.delete img{
+    width: 16px;
+}

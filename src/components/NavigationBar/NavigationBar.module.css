@@ -24,3 +24,22 @@
 .navigation_bar .active{
     color:#3a7bfd;
 }
+
+@media (max-width:375px) {
+    .clear{
+        display: none;
+    }
+    .navigation_bar ul{
+        width: 55% !important;
+    }
+}
+
+@media (max-width:387px) and (min-wisth:375) {
+    .navigation_bar p,
+    .navigation_bar li{
+        text-align: center;
+    }
+    .navigation_bar ul{
+        width: 60% !important;
+    }
+}

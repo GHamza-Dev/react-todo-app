@@ -10,8 +10,8 @@ import TodoList from './components/TodoList/TodoList';
 import LocalStorage from './helpers/LocalStorage';
 class App extends Component{
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     
     this.storage = new LocalStorage(
       'todo-app-challenge-xx12354'
@@ -23,7 +23,7 @@ class App extends Component{
       filterBy:'all'
     }
   }
-
+  
   toggleCompletedHandler = (id) => {
     let todoList = [...this.state.todos].map(todo => {
       if (todo['id'] === id) {
@@ -44,7 +44,7 @@ class App extends Component{
       alert('Oops it seems like you feel boring ;) if though please take a rest.')
       return;
     }
-    const todoList = [...this.state.todos];
+    const todoList = this.storage.getData();
     const id = `${Math.random()*10}sdf1`;
     todoList.push({id:id,text:inputValue,done:false});
     
@@ -53,6 +53,17 @@ class App extends Component{
     this.setState({todos:todoList});
 
     this.setState({input:''});    
+  }
+
+  removeTodoHandler = (id) => {
+    const todoList = this.storage.getData().filter(todo=>{
+      return todo['id'] !== id;
+    });
+
+    this.storage.setData(todoList);
+
+    this.setState({todos:TodoList});
+
   }
 
   updateInputStateHandler = (e) => {
@@ -68,10 +79,10 @@ class App extends Component{
 
   getLeftItems = () =>{
     let itemsLeft = 0;
-    this.state.todos.forEach(todo => {
+    this.storage.getData().forEach(todo => {
       if(!todo['done']) itemsLeft++;
     });
-
+    
     return itemsLeft;
   }
 
@@ -88,11 +99,12 @@ class App extends Component{
           </Wrapper>
         </Header>
         <Body>
-          <TodoList todos={this.state.todos} 
+          <TodoList todos={this.storage.getData()} 
           onCheck={this.toggleCompletedHandler} 
           onChangeFilter={this.changeFilterOption}
           filterBy={this.state.filterBy}
-          itemsLeft={this.getLeftItems()} />
+          itemsLeft={this.getLeftItems()} 
+          onRemove={this.removeTodoHandler} />
         </Body>
       </Layout>
     );

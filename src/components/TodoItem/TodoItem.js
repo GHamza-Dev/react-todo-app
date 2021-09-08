@@ -1,8 +1,9 @@
 import React from 'react';
 import classes from './TodoItem.module.css';
 import Checkbox from '../UI/CheckBox/CheckBox';
+import cross_icon from '../../assets/images/icon-cross.svg';
 
-const TodoItem = ({id,text,completed,onCheck}) => {
+const TodoItem = ({id,text,completed,onCheck,onRemove}) => {
 
     let textClasses = [
         classes.todo_text,
@@ -15,6 +16,9 @@ const TodoItem = ({id,text,completed,onCheck}) => {
             onCheck={onCheck} 
             />
             <p className={textClasses.join(' ')}>{text}</p>
+            <button onClick={()=>{onRemove(id)}} className={classes.delete}>
+                <img src={cross_icon} alt="cross" />
+            </button>
         </li>
     );
 };
