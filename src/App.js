@@ -106,6 +106,7 @@ class App extends Component{
           itemsLeft={this.getLeftItems()} 
           onRemove={this.removeTodoHandler} />
         </Body>
+        <p style={{fontSize:'12px',textAlign:'center'}}>(Working on drag and drop feature)</p>
       </Layout>
     );
   }
