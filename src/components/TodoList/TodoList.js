@@ -5,7 +5,7 @@ import NavigationBar from '../NavigationBar/NavigationBar';
 
 const TodoList = (props) => {
     let todoList = null;
-    let alertMsg = 'Note that this is a static todo, it means that you can nor mark it as completed nither delete it.\nPlease type and hit enter to create a new todo ;)';
+    let alertMsg = 'Note that this is a static todo, which means that you can neither mark it as completed nor delete it.\nPlease type and hit enter to create a new todo ;)';
     
     switch (props.filterBy) {
         case 'completed':
