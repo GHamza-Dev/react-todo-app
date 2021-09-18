@@ -11,3 +11,9 @@
 .todo_list ul{
     width: 100%;
 }
+
+/* @media (min-height:600px) {
+    .todo_list{
+        transform: translateY(-45px);   
+    }
+} */
