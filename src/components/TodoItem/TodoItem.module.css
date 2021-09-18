@@ -8,12 +8,12 @@
 }
 
 .todo_item:nth-child(odd){
-    animation: animateOddItems .5s ease-out forwards;
+    animation: animateOddItems .5s cubic-bezier(0.42, 0, 0.04, 1.24) forwards;
 }
 
 @keyframes animateOddItems {
-    from{opacity: 0;transform: translateX(-500px);}
-    to{opacity: 1;transform: translate(0);}
+    from{opacity: 0;transform:  scale(0.5);}
+    to{opacity: 1;transform:  scale(1);}
 }
 
 .todo_item:nth-child(even){
@@ -21,8 +21,8 @@
 }
 
 @keyframes animateEvenItems {
-    from{opacity: 0;transform: translateX(500px);}
-    to{opacity: 1;transform: translate(0);}
+    from{opacity: 0;transform:  scale(0.5)}
+    to{opacity: 1;transform:  scale(1);}
 }
 
 .todo_text{
