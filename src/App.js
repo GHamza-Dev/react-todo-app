@@ -8,6 +8,7 @@ import HeaderTop from './components/HeaderTop/HeaderTop';
 import Input from './components/UI/Input/Input';
 import TodoList from './components/TodoList/TodoList';
 import LocalStorage from './helpers/LocalStorage';
+import Attribution from './components/Attribution/Attribution';
 class App extends Component{
 
   constructor(props){
@@ -107,6 +108,7 @@ class App extends Component{
           onRemove={this.removeTodoHandler} />
         </Body>
         <p style={{fontSize:'12px',textAlign:'center'}}>(Working on drag and drop feature)</p>
+        <Attribution />
       </Layout>
     );
   }
