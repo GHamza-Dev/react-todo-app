@@ -39,8 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/GHamza-Dev/react-todo-app](https://github.com/GHamza-Dev/react-todo-app)
+- Live Site URL: [https://react-todo-app-orcin.vercel.app/](https://react-todo-app-orcin.vercel.app/)
 
 ## My process
 
@@ -73,8 +73,7 @@ Users should be able to:
 - [React](https://reactjs.org/) - React website
 ## Author
 
-- Website - [GASSAI Hamza](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [GASSAI Hamza](https://github.com/GHamza-Dev)
+- Frontend Mentor - [GHamza-Dev](https://www.frontendmentor.io/profile/GHamza-Dev)
 
 
